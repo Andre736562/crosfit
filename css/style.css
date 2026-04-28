@@ -1,6 +1,5 @@
 header{
-<<<<<<< HEAD
-    background: linear-gradient(90deg, #0F2A44, #2F7FBF);
+    background: linear-gradient(90deg, #0F2A44, #1E88C8); /* azul oscuro + azul */
     color:#ffffff;
     padding:15px;
 }
@@ -17,7 +16,7 @@ nav a:hover{
 #inicio{
     text-align:center; 
     padding:50px; 
-    background: linear-gradient(135deg, #2F7FBF, #ffffff);
+    background: linear-gradient(135deg, #1E88C8, #ffffff);
     color:#0F2A44;
 }
 
@@ -36,7 +35,7 @@ nav a:hover{
 
 #video{
     padding:40px;
-    background:linear-gradient(to right, #CFE6F7, #eaf4fc);
+    background:linear-gradient(to right, #eef5fb, #d9ecfa);
     color:#222;
 }
 
@@ -48,7 +47,7 @@ nav a:hover{
 
 #productos{
     padding:40px;
-    background:linear-gradient(to right, #ffffff, #CFE6F7);
+    background:linear-gradient(to right, #ffffff, #eef5fb);
     color:#222;
 }
 
@@ -59,14 +58,14 @@ nav a:hover{
 }
 
 #planes div{
-    border:2px solid #2F7FBF; 
+    border:2px solid #1E88C8; 
     padding:20px;
-    background:linear-gradient(to bottom, #ffffff, #f2f8fd);
+    background:linear-gradient(to bottom, #ffffff, #f0f7fd);
     color:#111;
 }
 
 #horarios{
-    border:2px solid #2F7FBF; 
+    border:2px solid #1E88C8; 
     padding:40px;
     background:#ffffff;
 }
@@ -79,7 +78,7 @@ nav a:hover{
 
 #redes{
     padding:40px;
-    background: linear-gradient(90deg, #0F2A44, #2F7FBF);
+    background: linear-gradient(90deg, #0F2A44, #1E88C8);
     color:#ffffff;
 }
 
@@ -91,12 +90,12 @@ nav a:hover{
 
 #ubicacion{
     padding:40px;
-    background:linear-gradient(to right, #CFE6F7, #eaf4fc);
+    background:linear-gradient(to right, #eef5fb, #d9ecfa);
     color:#222;
 }
 
 footer{
-    background:#0F2A44;
+    background:#0F2A44; /* azul oscuro elegante */
     color:#FFD43B;
     text-align:center;
     padding:20px;
@@ -106,68 +105,4 @@ footer{
     padding:40px;
     background:#ffffff;
     color:#222;
-=======
-    background:#BFBFBF;
-    color:rgb(253, 251, 251);
-    padding:15px;
-}
-nav a{
-    color: #f4f6f7; 
-    margin:10px;
-}
-#inicio{
-    text-align:center; 
-    padding:50px; 
-    background:#52A5D9;
-}
-#inicio button{
-    padding:15px;
-    background:green;
-    color:white;
-}
-#nosotros{
-    padding:40px;
-}
-#video{
-    padding:40px;
-}
-#galeria{
-    padding:40px;
-}
-#productos{
-    padding:40px;
-}
-#planes{
-    padding:40px;
-}
-#planes div{
-    border:1px solid blue; 
-    padding:20px;
-}
-#horarios{
-    border:1px solid blue; 
-    padding:40px;
-}
-#horarios table{
-    border:1px solid rgb(40, 4, 243); 
-    padding:40px;
-}
-#redes{
-    padding:40px;
-}
-#contacto{
-    padding:40px;
-}
-#ubicacion{
-    padding:40px;
-}
-footer{
-    background:rgb(32, 236, 124);
-    color:black;
-    text-align:center;
-    padding:20px;
-}
-#entrenamineto{
-    padding:40px;
->>>>>>> e402a21a836aae1f3b0e6457b8b380abf9050a48
 }
