@@ -260,7 +260,7 @@ iframe{
 
 /* FILAS FIJAS */
 #horarios tr:nth-child(2){
-    background:#a22929;
+    background:#fffdfd;
 }
 
 #horarios tr:nth-child(3){
