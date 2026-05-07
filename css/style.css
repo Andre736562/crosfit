@@ -590,3 +590,128 @@ footer {
     padding: 20px;
     font-size: 0.85rem;
 }
+
+@media (max-width: 480px) {
+
+    /* ===== MENÚ HAMBURGUESA ===== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 200;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: var(--amarillo);
+    border-radius: 3px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Animación X al abrir */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    #mainNav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--negro);
+        border-top: 2px solid var(--amarillo);
+        padding: 15px 0;
+        z-index: 150;
+    }
+
+    #mainNav.open {
+        display: flex;
+    }
+
+    #mainNav a {
+        padding: 12px 30px;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255,212,59,0.1);
+    }
+
+    #mainNav a:last-child {
+        border-bottom: none;
+    }
+}
+    .logo-main {
+        font-size: 1.4rem;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+    }
+
+    .hero-img img {
+        width: 150px;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .gallery-grid,
+    .gallery-grid.six {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: 160px;
+    }
+
+    .plan-precio {
+        font-size: 2.2rem;
+    }
+
+    .precio {
+        font-size: 1.8rem;
+    }
+
+    .tabla-box {
+        overflow-x: auto;
+    }
+
+    .mapa-box iframe {
+        height: 280px;
+    }
+
+    .btn-primary,
+    .btn-dark {
+        padding: 12px 22px;
+        font-size: 0.88rem;
+    }
+}

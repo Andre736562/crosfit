@@ -18,7 +18,15 @@
             <span class="logo-main">MASHKA BOX</span>
             <span class="logo-sub">Training Club</span>
         </div>
-        <nav>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="mainNav">
             <a href="#inicio">Inicio</a>
             <a href="#nosotros">Nosotros</a>
             <a href="#video">Video</a>
@@ -96,9 +104,9 @@
         <div class="gallery-grid six">
             <img src="4.jpg" alt="Clase">
             <img src="6.jpg" alt="Clase">
+            <img src="7.jpg" alt="Clase">
             <img src="8.jpg" alt="Clase">
             <img src="9.jpg" alt="Clase">
-            <img src="15.jpg" alt="Clase">
         </div>
     </div>
 </section>
@@ -175,15 +183,54 @@
     </div>
 </section>
 
+<?php
+                // Conexión a la base de datos
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "mashkabox";
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                if ($conn->connect_error) {
+                    die("Conexión fallida: " . $conn->connect_error);
+                }
+?>
 <section id="contacto">
     <div class="section-inner centered">
         <h2 class="section-title">Contáctanos</h2>
         <div class="form-box">
-            <form class="form-centro" onsubmit="return false;">
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Correo" required>
-                <input type="text" placeholder="Teléfono" required>
-                <textarea placeholder="Mensaje" required></textarea>
+            <?php
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $conn = new mysqli("localhost", "root", "", "mashkabox");
+
+                    $nombre   = $_POST['nombre']   ?? '';
+                    $correo   = $_POST['correo']   ?? '';
+                    $telefono = $_POST['telefono'] ?? '';
+                    $mensaje  = $_POST['mensaje']  ?? '';
+
+                    $sql = "INSERT INTO clientes (cli_name, cli_email, cli_phone, cli_message)
+                            VALUES ('$nombre', '$correo', '$telefono', '$mensaje')";
+
+                    if ($conn->query($sql) === TRUE) {
+                        echo "<p id='msg-ok' style='color:green'>✅ Mensaje enviado correctamente</p>
+                        <script>
+                            setTimeout(() => {
+                                document.getElementById('msg-ok').style.display = 'none';
+                            }, 3000);
+                            window.location.hash = '#contacto';
+                        </script>";
+                    } else {
+                        echo "<p style='color:red'>❌ Error: " . $conn->error . "</p>";
+                    }
+
+                    $conn->close();
+                }
+                ?>
+
+            <form class="form-centro" method="POST" action="">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="correo" placeholder="Correo" required>
+                <input type="text" name="telefono" placeholder="Teléfono" required>
+                <textarea name="mensaje" placeholder="Mensaje" required></textarea>
                 <button class="btn-primary full" type="submit">Enviar mensaje</button>
             </form>
         </div>
@@ -226,6 +273,22 @@
 <footer>
     <p>© 2026 MASHKA BOX Training Club — Latacunga, Ecuador</p>
 </footer>
+<script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('mainNav');
 
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        toggle.classList.toggle('active');
+    });
+
+    // Cierra el menú al hacer clic en un enlace
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            toggle.classList.remove('active');
+        });
+    });
+</script>
 </body>
 </html>
